@@ -1,0 +1,14 @@
+---
+- name: Configure OSPF on R1
+  hosts: ios
+  gather_facts: false
+  connection: local
+
+  tasks:
+
+  - name: Configure OSPF on R1
+    ios_config:
+      lines:
+        - router-id 2.2.2.2
+        - network 192.168.1.10 0.0.0.255 area 0
+      parents: router ospf 1

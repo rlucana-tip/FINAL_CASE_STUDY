@@ -1,0 +1,16 @@
+---
+- name: Backup Running Configuration
+  hosts: ios
+  gather_facts: false
+ 
+  tasks:
+   - name: Show Current Running Configuration
+     ios_command:
+       commands:
+         - show running-config  
+     register: config
+ 
+   - name: SAVE OUTPUT TO ./backup/
+     copy:
+       content: "{{ config.stdout[0] }}"
+       dest: "backup/show_run_{{ inventory_hostname }}.txt"

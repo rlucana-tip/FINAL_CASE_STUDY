@@ -1,0 +1,22 @@
+---
+- name: Configure VLAN on R1
+  hosts: ios
+  gather_facts: false
+  connection: local
+  
+  tasks:
+    
+    - name: Set IP Address
+      ios_config:
+        lines:
+          - description VLAN subinterface
+          - encapsulation dot1q 20 native
+          - ip address 192.168.20.1 255.255.255.0
+        parents: interface f0/1.20
+    
+
+    
+        
+    
+    
+

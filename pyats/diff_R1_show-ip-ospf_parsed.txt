@@ -1,0 +1,17 @@
+--- test1/R1_show-ip-ospf_parsed.txt
++++ test2/R1_show-ip-ospf_parsed.txt
+ vrf:
+  default:
+   address_family:
+    ipv4:
+     instance:
+      1:
+       areas:
+        0.0.0.0:
+         statistics:
+-         spf_last_executed: 00:07:37.284
++         spf_last_executed: 00:01:12.456
+-      elapsed_time: 00:07:44.812
++      elapsed_time: 00:11:47.772
+-      router_id: 1.1.1.1
++      router_id: 2.2.2.2
